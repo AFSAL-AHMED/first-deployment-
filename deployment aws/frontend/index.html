@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AWS Deployment Demo</title>
+</head>
+
+<body>
+
+    <h1>My AWS Deployment Demo</h1>
+
+    <button onclick="callBackend()">
+        Call Backend
+    </button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        async function callBackend() {
+
+            const response = await fetch("http://127.0.0.1:8000/hello");
+
+            const data = await response.json();
+
+            document.getElementById("result").innerText = data.message;
+        }
+    </script>
+
+</body>
+
+</html>
